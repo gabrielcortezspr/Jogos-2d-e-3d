@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraMudançadeCor : MonoBehaviour
+public class CameraMudancaDeCor : MonoBehaviour
 {
     Camera cam;
     // Start is called before the first frame update

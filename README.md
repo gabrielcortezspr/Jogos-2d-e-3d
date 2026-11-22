@@ -1,18 +1,35 @@
-# Jogos em Unity (C#)
+# Unity 2D Games
 
-Scripts C# de três jogos 2D que fiz no Unity. Foi meu primeiro contato com programação, e o
-código está como saiu na época: nomes e comentários informais, sem refatoração.
+![Unity](https://img.shields.io/badge/Unity-2D-000000?logo=unity&logoColor=white)
+![C#](https://img.shields.io/badge/C%23-scripts-512BD4?logo=dotnet&logoColor=white)
+![License](https://img.shields.io/badge/license-MIT-green)
 
-| Pasta | Jogo | O que os scripts fazem |
+Gameplay scripts (C#) from three 2D games I built in Unity. This was my first contact with
+programming, so the code is kept as it was written at the time: informal names, comments in
+Portuguese, no refactoring. It is here as a record of where I started.
+
+| Game | Genre | What the scripts implement |
 |---|---|---|
-| [`scripts/morai`](scripts/morai) | Plataforma | Personagem com HUD e tempo de vida, plataformas que caem, paredes mortais, inimigos que perseguem o jogador, menu e troca de fase |
-| [`scripts/robColor`](scripts/robColor) | Plataforma com energia | Robô com barra de energia, blocos quebráveis, projéteis, sensores, pausa e menu |
-| [`scripts/tueTeste`](scripts/tueTeste) | Tiro 2D | Mira com o mouse, canhão, projéteis, inimigos e pontuação |
+| [`morai`](scripts/morai) | Platformer | Player controller with run, crouch, variable-height jump and a "dead" form with its own movement; HUD and life timer; falling platforms, deadly walls, chasing and phantom enemies; menu and level transitions |
+| [`robColor`](scripts/robColor) | Platformer | Robot with an energy bar, breakable bricks, projectiles, sensors, hazards, pause menu, start screen and level flow |
+| [`tueTeste`](scripts/tueTeste) | Action platformer / shooter | Mouse aiming, dash with cooldown, mana and regeneration, critical hits and an ultimate attack, knockback, cannons and projectiles, enemy AI and scoring |
 
-Todos usam `Rigidbody2D` para física, `Input` para controle e `SceneManager` para fases e menus.
+## Techniques used
 
-## Como usar
+- Physics with `Rigidbody2D`, collision and trigger callbacks (`OnCollisionEnter2D`,
+  `OnTriggerEnter2D`, …).
+- Input through `Input.GetAxis` / `GetButton` / `GetKey` and mouse position for aiming.
+- Coroutines for delayed actions such as level transitions.
+- Scene flow with `SceneManager` (menus, pause, next level, restart).
+- UI with `UnityEngine.UI` and TextMeshPro; camera follow and color-shift effects.
+- Audio through a small sound manager per game.
 
-Este repositório guarda só os scripts, não os projetos Unity completos (cenas, sprites e
-sons ficaram de fora). Para testar, copie uma pasta para `Assets/` de um projeto 2D e ligue os
-componentes aos objetos da cena.
+## Using the scripts
+
+Only the scripts are versioned, not the full Unity projects (scenes, sprites and sounds were
+left out). To try one, copy its folder into `Assets/` of a 2D project and attach the
+components to the matching objects in the scene.
+
+## License
+
+[MIT](LICENSE)
